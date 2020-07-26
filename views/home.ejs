@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+        <title> <%= toto %> </title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+<body>
+
+
+    <h1 id="heading">Contact List</h1>
+     <div id="outer">
+    <form action="/mypost" method="POST">
+          <label for="f1" class="tt" id="d1">Name..</label>
+        <input type="text" id="f1" name="name" required placeholder="Enter Name"> 
+           <label for="f2" class="tt"> Number..</label>
+        <input type="number" id="f2" name ="phone" placeholder="Enetr Phone" required>
+   
+        <button type="submit" id="add">Add</button>
+   
+   
+       </form>
+    <div>
+    <ul>
+    <% for (let i of mylist) { %>
+        <div id="C_div">
+        <li id="li1">
+        <%= i.name %>
+        <br>
+        <span id="text"><%= i.phone %></span>
+         
+    </li>
+    </div>
+    <div id="delete">
+        <a href="/delete/?id=<%=i._id%>"> Delete</a>
+    </div>
+     <% } %>
+    </ul>
+   </div>
+   </div>
+
+ <script type="text/javascript" src="home.js"></script>
+
+</body>
+    </html>
